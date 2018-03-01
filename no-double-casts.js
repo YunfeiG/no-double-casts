@@ -24,7 +24,7 @@ module.exports = function NoDblCasts(dispatch) {
 	
 	function check(type, event){
 		let skill = Math.floor((event.skill - 0x4000000) / 10000)
-		if(skills[job][skill]){
+		if(skills[job] && skills[job][skill]){
 			if(lastSkill == skill){
 				dispatch.toClient('S_CANNOT_START_SKILL', 1, {skill: event.skill})
 				return false

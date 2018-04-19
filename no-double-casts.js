@@ -2,7 +2,7 @@ const skills = {
 	2: {18: 300},			// Overpower
 	4: {26: 300},			// Teleport jaunt
 	5: {17: 300, 20: 300, 32: 300},		// Web arrow, Restraining arrow, Find weakness
-	7: {17: 300, 42: 450}			// Teleport jaunt, Boomerang pulse
+	7: {17: 300, 42: 450, 44: 300}			// Teleport jaunt, Boomerang pulse, Mass Teleport
 }
 
 const PING = 250
@@ -13,14 +13,14 @@ module.exports = function NoDblCasts(dispatch) {
 	
 	let timer = null
 
-	dispatch.hook('S_LOGIN', 9, (event) => {
+	dispatch.hook('S_LOGIN', 10, (event) => {
 		job = (event.templateId - 10101) % 100
 		lastSkill = -1
 	});
 
-	dispatch.hook('C_START_SKILL', 3, {order: -90}, check.bind(null,'C_START_SKILL'))
-	dispatch.hook('C_START_TARGETED_SKILL', 3, {order: -90}, check.bind(null,'C_START_TARGETED_SKILL'))
-	dispatch.hook('C_START_INSTANCE_SKILL', 1, {order: -90}, check.bind(null,'C_START_INSTANCE_SKILL'))
+	dispatch.hook('C_START_SKILL', 5, {order: -90}, check.bind(null,'C_START_SKILL'))
+	dispatch.hook('C_START_TARGETED_SKILL', 4, {order: -90}, check.bind(null,'C_START_TARGETED_SKILL'))
+	dispatch.hook('C_START_INSTANCE_SKILL', 3, {order: -90}, check.bind(null,'C_START_INSTANCE_SKILL'))
 	
 	function check(type, event){
 		let skill = Math.floor((event.skill - 0x4000000) / 10000)

@@ -1,8 +1,9 @@
 const skills = {
 	2: {18: 300},			// Overpower
-	4: {26: 300},			// Teleport jaunt
-	5: {17: 300, 20: 300, 32: 300},		// Web arrow, Restraining arrow, Find weakness
-	7: {17: 300, 42: 450, 44: 300}			// Teleport jaunt, Boomerang pulse, Mass Teleport
+	4: {7: 400, 26: 300},	//  Backstep Teleport jaunt
+	5: {6: 400, 17: 300, 20: 300, 32: 300},		// Backstep, Web arrow, Restraining arrow, Find weakness
+	6: {38: 400, 40: 700},		// Backstep, Zenobia's vortex
+	7: {17: 300, 42: 450, 44: 300}		// Teleport jaunt, Boomerang pulse, Mass Teleport
 }
 
 const PING = 250
